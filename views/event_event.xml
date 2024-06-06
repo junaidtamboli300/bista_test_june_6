@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- # these is the form view -->
+    <record id="event_management_event_event_form" model="ir.ui.view">
+        <field name="name">event.event.form</field>
+        <field name="model">event.events</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <!-- # these code creates the smart button inside form and adds the button to the last of the view -->
+                    <!-- # and on clicking on these button we can open tree view of attendes -->
+                    <div name="button_box" position="inside">
+                        <button name="action_view_attendees" string="OAV" type="object" class="oe_stat_button" icon="fa-shopping-cart">
+                        </button>
+                    </div>
+                    <group>
+                        <field name = "name"/>
+                        <field name = "description"/>
+                        <field name = "start_date"/>
+                        <field name = "end_date"/>
+                        <field name = "organizer_id"/>
+                        <field name = "attendee_ids"/>
+                        <field name = "duration"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!-- #these is the tree view -->
+    <record id="event_management_event_event_tree" model="ir.ui.view">
+        <field name="name">event.event.tree</field>
+        <field name="model">event.events</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name = "name"/>
+                <field name = "description"/>
+                <field name = "start_date"/>
+                <field name = "end_date"/>
+                <field name = "organizer_id"/>
+                <field name = "attendee_ids"/>
+                <field name = "duration"/>
+            </tree>
+        </field>
+    </record>
+
+
+     <!-- # these is the action passed -->
+     <record id="action_event_event" model="ir.actions.act_window">
+        <field name="name">Event Event</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">event.events</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- these is the menuitem -->
+    <menuitem
+    id = "menu_event_attendee_management"
+    name = "Event Event"
+    parent = "menu_event_event"
+    action = "action_event_event"
+    sequence = "10"
+    />
+
+</odoo>

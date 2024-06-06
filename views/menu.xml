@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <menuitem 
+    id="menu_event_management_root" 
+    name="Event Management" 
+    sequence="10" />
+    
+    <menuitem 
+    id = "menu_event_attendee"
+    name = "Event Management Event Attendee"
+    parent = "menu_event_management_root"
+    sequence = "10"
+    />
+
+    <menuitem 
+    id = "menu_event_event"
+    name = "Event Management Event Event"
+    parent = "menu_event_management_root"
+    sequence = "10"
+    />
+    
+    <menuitem 
+    id = "menu_event_organizer"
+    name = "Event Management Event Organizer"
+    parent = "menu_event_management_root"
+    sequence = "10"
+    />
+
+    <menuitem 
+    id = "menu_event_registration"
+    name = "Event Management Event Registration"
+    parent = "menu_event_management_root"
+    sequence = "10"
+    />
+
+
+
+</odoo>

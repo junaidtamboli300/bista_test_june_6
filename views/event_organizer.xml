@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <!-- # these is the form  -->
+    <record id="event_management_event_organizer_form" model="ir.ui.view">
+        <field name="name">event.organizer.form</field>
+        <field name="model">event.organizer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name = "name"/>
+                        <field name = "email"/>
+                        <field name = "phone"/>
+                        <field name = "user_id"/>
+                        <field name = "event_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- # these is the tree view  -->
+    <record id="event_management_event_organizer_tree" model="ir.ui.view">
+        <field name="name">event.organizer.tree</field>
+        <field name="model">event.organizer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name = "name"/>
+                <field name = "email"/>
+                <field name = "phone"/>
+                <field name = "user_id"/>
+                <field name = "event_ids"/>
+            </tree>
+        </field>
+    </record>
+
+       <!-- # these is the action passed -->
+    <record id="action_event_organizer" model="ir.actions.act_window">
+        <field name="name">Event organizer</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">event.organizer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- these is the menuitem -->
+    <menuitem
+    id = "menu_event_organizer_management"
+    name = "Event Organizer"
+    parent = "menu_event_organizer"
+    action = "action_event_organizer"
+    sequence = "10"
+    />
+</odoo>

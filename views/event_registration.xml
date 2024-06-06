@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+<!-- # these is the form  -->
+    <record id="event_management_event_registration_form" model="ir.ui.view">
+        <field name="name">event.registration.form</field>
+        <field name="model">event.registration</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name = "attendee_id"/>
+                        <field name = "event_id"/>
+                        <field name = "registration_date"/>
+                        <field name = "state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+<!-- # these is the tree view  -->
+    <record id="event_management_event_registration_tree" model="ir.ui.view">
+        <field name="name">event.registration.tree</field>
+        <field name="model">event.registration</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name = "attendee_id"/>
+                <field name = "event_id"/>
+                <field name = "registration_date"/>
+                <field name = "state"/>
+            </tree>
+        </field>
+    </record>
+
+  <!-- # these is the action passed -->
+    <record id="action_event_registration" model="ir.actions.act_window">
+        <field name="name">Event registration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">event.registration</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <!-- these is the menuitem -->
+    <menuitem
+    id = "menu_event_registration_management"
+    name = "Event registration"
+    parent = "menu_event_registration"
+    action = "action_event_registration"
+    sequence = "10"
+    />
+
+</odoo>
